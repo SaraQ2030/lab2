@@ -68,26 +68,28 @@ public class Main {
 
  do{
     System.out.println("choose number for the following :" +"\n"+ "1/add     " +
-            "\t"+ "2/display the array  "+"\n"+"3/search  "+"\t"+" 4/sort"+"\t"+" 5/quit:");
+            "\n"+ "2/display the array  "+
+            "\n"+"3/search  "+"\n"+"4/sort"+"\n"+"5/quit:");
      chose=input.nextInt();
 
     if (chose == 1) {
         System.out.println("Enter the value to add to the array");
         valu = input.nextInt();
-        add_array(arr, valu);
+        arr.add(valu);
+           // add_array(arr, valu);
 
     } else if (chose == 2) {
-        System.out.println("The array : ");
-        display(arr);
+        System.out.println("The array : "+arr);
+        //display(arr);
     } else if (chose == 3) {
         System.out.println("Enter the number to check ");
         x = input.nextInt();
-        check_contain(arr, x);
-
+      //  check_contain(arr, x);
+       System.out.println(arr.contains(x));
 
     } else if (chose == 4) {
-
-        sort_arr(arr);
+        Collections.sort(arr);
+       // sort_arr(arr);
 
     }
 }while (chose !=5 && chose>0);
@@ -103,7 +105,7 @@ public class Main {
 //        System.out.println("Enter the number of random number to generate : ");
 //        int n=input.nextInt();
 //        for (int i=0;i<n;i++){
-//            System.out.print("  "+randomNumberGenerator(min_num,max_num));
+//            System.out.print("  "+randomNumberGenerator(min_num,max_num));}
 
 
         //Q7----------------------NOT FINISSHED--------------------------------------------------------------------------------------
@@ -125,78 +127,44 @@ public class Main {
 
 
 
-public static boolean check_length(String x){
-    boolean check;
-    if (x.length()>8)
-        { check= true;
-        }else {
-            System.out.println("The password should  be more than 8 character ");
-        check=false; }
-       return  check;
-    }
-//public static void check_upperCase(String x){
-//        x.toUpperCase(x);
+//public static boolean check_length(String x){
+//    boolean check;
+//    if (x.length()>8)
+//        { check= true;
+//        }else {
+//            System.out.println("The password should  be more than 8 character ");
+//        check=false; }
+//       return  check;
+//    }
+//
+//public static void fibo(int x) {
+//        int fnum = 0;
+//        int snum = 1;
+//        for (int i = 1; i <= x; i++) {
+//            System.out.print(fnum + "  ");
+//            int next = fnum + snum;
+//            fnum = snum;
+//            snum = next;
+//        }
+//    }
+//public static int randomNumberGenerator(int min, int max)
+//{
+//    Random r = new Random();
+//    int randomNum = r.nextInt(max - min);
+//    int result = randomNum + min;
+//    return result;
 //}
-public static void fibo(int x) {
-        int fnum = 0;
-        int snum = 1;
-        for (int i = 1; i <= x; i++) {
-            System.out.print(fnum + "  ");
-            int next = fnum + snum;
-            fnum = snum;
-            snum = next;
-        }
-    }
-public static int randomNumberGenerator(int min, int max)
-{
-    Random r = new Random();
-    int randomNum = r.nextInt(max - min);
-    int result = randomNum + min;
-    return result;
-}
 
-public static void reverse(int x){
-              int rem;
-              int rev = 0;
-              while (x>0){
-                  rem = x % 10;
-                  rev = (rev * 10) + rem;
-                  x = x / 10;
-              }
-              System.out.println(rev);
-          }
-
-
-public static ArrayList display(ArrayList x){
-   ArrayList<Integer> arr = new <Integer>ArrayList();
-       for(int a:arr){
-           System.out.println(arr.get(a));
-       }
-       return arr;
-       }
-
-public static void add_array(ArrayList a ,int x) {
-
-    ArrayList<Integer> arr = new <Integer>ArrayList();
-    arr.add(x);
-    //System.out.println(arr);
-}
-
-public static boolean check_contain(ArrayList a ,int x){
-boolean check=a.contains(x);
-System.out.println(check);
-return check;
-}
-
-public static void sort_arr(ArrayList a){
-        ArrayList arr=new ArrayList();
-
-        Collections.sort(arr);
-        System.out.println(arr);
-
-
-}
-
+//public static void reverse(int x){
+//              int rem;
+//              int rev = 0;
+//              while (x>0){
+//                  rem = x % 10;
+//                  rev = (rev * 10) + rem;
+//                  x = x / 10;
+//              }
+//              System.out.println(rev);
+//          }
 
 
 
