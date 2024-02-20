@@ -60,31 +60,37 @@ public class Main {
 
         //Q5----------------------------------NOT FINISHED--------------------------------------------------------------------------
        Scanner input=new Scanner(System.in);
-        System.out.println("Enter the size of array ");
-        int size_arr=input.nextInt();
-        int [] arr=new int[size_arr];
+       // System.out.println("Enter the size of array ");
+        ArrayList arr=new ArrayList<>();
+       int x;
+        int valu;
+        int chose;
 
-       System.out.println("choose number for the following :1/add     " +
-               "2/display the array      3/search   4/sort   5/quit:");
+ do{
+    System.out.println("choose number for the following :" +"\n"+ "1/add     " +
+            "\t"+ "2/display the array  "+"\n"+"3/search  "+"\t"+" 4/sort"+"\t"+" 5/quit:");
+     chose=input.nextInt();
 
-            int chose=input.nextInt();
-            switch (chose) {
-                case 1:add(arr[size_arr]);
-                    break;
-                case 2:  display(arr[size_arr]);
-                    break;
-                case 3://search
-                    break;
-                case 4://sort
-                    break;
-                case 5://stop
-                    break;
-                default:System.out.println("Enter number between 1-5");
-            }
+    if (chose == 1) {
+        System.out.println("Enter the value to add to the array");
+        valu = input.nextInt();
+        add_array(arr, valu);
 
-
+    } else if (chose == 2) {
+        System.out.println("The array : ");
+        display(arr);
+    } else if (chose == 3) {
+        System.out.println("Enter the number to check ");
+        x = input.nextInt();
+        check_contain(arr, x);
 
 
+    } else if (chose == 4) {
+
+        sort_arr(arr);
+
+    }
+}while (chose !=5 && chose>0);
 
 
         //Q6------------------------------------------------------------------------------------------------------------
@@ -161,22 +167,39 @@ public static void reverse(int x){
           }
 
 
-public static void display(int [] x){
-        int arr[x];
-        for (int i=0;i<x.length;i++){
-            System.out.println("The array :"+Arrays.toString(arr[i]));
-        }
+public static ArrayList display(ArrayList x){
+   ArrayList<Integer> arr = new <Integer>ArrayList();
+       for(int a:arr){
+           System.out.println(arr.get(a));
+       }
+       return arr;
+       }
+
+public static void add_array(ArrayList a ,int x) {
+
+    ArrayList<Integer> arr = new <Integer>ArrayList();
+    arr.add(x);
+    //System.out.println(arr);
 }
-public static void add(int x){
-       int [] arr=new int[x];
-        for (int i=0;i<x;i++){
 
-            System.out.println(Arrays.toString(arr[i]));
-        }
+public static boolean check_contain(ArrayList a ,int x){
+boolean check=a.contains(x);
+System.out.println(check);
+return check;
+}
+
+public static void sort_arr(ArrayList a){
+        ArrayList arr=new ArrayList();
+
+        Collections.sort(arr);
+        System.out.println(arr);
+
+
 }
 
 
 
 
 
-      }
+
+}
