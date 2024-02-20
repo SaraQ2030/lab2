@@ -58,42 +58,48 @@ public class Main {
 //        System.out.println("The reverse number is  : ");
 //        reverse(num);
 
-        //Q5----------------------------------NOT FINISHED--------------------------------------------------------------------------
-       Scanner input=new Scanner(System.in);
-       // System.out.println("Enter the size of array ");
-        ArrayList arr=new ArrayList<>();
-       int x;
-        int valu;
-        int chose;
+        //Q5------------------------------------------------------------------------------------------------------------
 
- do{
-    System.out.println("choose number for the following :" +"\n"+ "1/add     " +
-            "\n"+ "2/display the array  "+
-            "\n"+"3/search  "+"\n"+"4/sort"+"\n"+"5/quit:");
-     chose=input.nextInt();
-
-    if (chose == 1) {
-        System.out.println("Enter the value to add to the array");
-        valu = input.nextInt();
-        arr.add(valu);
-           // add_array(arr, valu);
-
-    } else if (chose == 2) {
-        System.out.println("The array : "+arr);
-        //display(arr);
-    } else if (chose == 3) {
-        System.out.println("Enter the number to check ");
-        x = input.nextInt();
-      //  check_contain(arr, x);
-       System.out.println(arr.contains(x));
-
-    } else if (chose == 4) {
-        Collections.sort(arr);
-       // sort_arr(arr);
-
-    }
-}while (chose !=5 && chose>0);
-
+//        Scanner input=new Scanner(System.in);
+//        System.out.println("Enter the size of array ");
+//        int count=input.nextInt();
+//        int[] list=new int[count];
+//        int chose;
+//        int x;
+//        boolean check=false;
+//
+//
+//        do {
+//            System.out.println("choose number for the following :" +"\n"+ "1/add     " +
+//                    "\n"+ "2/display the array  "+
+//                    "\n"+"3/search  "+"\n"+"4/sort"+"\n"+"5/quit:");
+//            chose=input.nextInt();
+//            switch (chose) {
+//                case 1:
+//                    System.out.println("Enter value to the array : ");
+//                    for (int i=0;i<list.length;i++){
+//                        int value=input.nextInt();
+//                        list[i]=value;
+//                    }
+//                    break;
+//                case 2:
+//
+//                    System.out.print(Arrays.toString(list));
+//                    break;
+//                case 3:
+//                    System.out.println("Enter the number to check ");
+//                    x = input.nextInt();
+//
+//                    System.out.println( check(list,x) );
+//
+//                    break;
+//                case 4: Arrays.sort(list);
+//                    break;
+//                default:
+//                    System.out.printf("Enter number between 1-5");
+//
+//            }
+//        }while (chose !=5 && chose>0 );
 
         //Q6------------------------------------------------------------------------------------------------------------
 //        Scanner input=new Scanner(System.in);
@@ -165,6 +171,17 @@ public class Main {
 //              }
 //              System.out.println(rev);
 //          }
+
+
+    public static boolean check(int []arr ,int x){
+    boolean check=false;
+    for (int i=0;i<arr.length;i++){
+        if(x==arr[i]){
+            check=true;
+        }
+    }
+    return check;
+}
 
 
 
