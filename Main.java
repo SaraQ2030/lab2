@@ -108,7 +108,7 @@ public class Main {
 //            System.out.print("  "+randomNumberGenerator(min_num,max_num));}
 
 
-        //Q7----------------------NOT FINISSHED--------------------------------------------------------------------------------------
+        //Q7------------------------------------------------------------------------------------------------------------
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the password ");
         String pass =input.next();
