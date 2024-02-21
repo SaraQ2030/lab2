@@ -58,41 +58,41 @@ public class Main {
 //        System.out.println("The reverse number is  : ");
 //        reverse(num);
 
-        //Q5----------------------------------NOT FINISHED--------------------------------------------------------------------------
-       Scanner input=new Scanner(System.in);
-       // System.out.println("Enter the size of array ");
-        ArrayList arr=new ArrayList<>();
-       int x;
-        int valu;
-        int chose;
-
- do{
-    System.out.println("choose number for the following :" +"\n"+ "1/add     " +
-            "\n"+ "2/display the array  "+
-            "\n"+"3/search  "+"\n"+"4/sort"+"\n"+"5/quit:");
-     chose=input.nextInt();
-
-    if (chose == 1) {
-        System.out.println("Enter the value to add to the array");
-        valu = input.nextInt();
-        arr.add(valu);
-           // add_array(arr, valu);
-
-    } else if (chose == 2) {
-        System.out.println("The array : "+arr);
-        //display(arr);
-    } else if (chose == 3) {
-        System.out.println("Enter the number to check ");
-        x = input.nextInt();
-      //  check_contain(arr, x);
-       System.out.println(arr.contains(x));
-
-    } else if (chose == 4) {
-        Collections.sort(arr);
-       // sort_arr(arr);
-
-    }
-}while (chose !=5 && chose>0);
+        //Q5------------------------------------------------------------------------------------------------------------
+//        Scanner input=new Scanner(System.in);
+//        // System.out.println("Enter the size of array ");
+//        ArrayList arr=new ArrayList<>();
+//        int x;
+//        int valu;
+//        int chose;
+//
+//        do{
+//            System.out.println("choose number for the following :" +"\n"+ "1/add     " +
+//                    "\n"+ "2/display the array  "+
+//                    "\n"+"3/search  "+"\n"+"4/sort"+"\n"+"5/quit:");
+//            chose=input.nextInt();
+//
+//            if (chose == 1) {
+//                System.out.println("Enter the value to add to the array");
+//                valu = input.nextInt();
+//                arr.add(valu);
+//                // add_array(arr, valu);
+//
+//            } else if (chose == 2) {
+//                System.out.println("The array : "+arr);
+//                //display(arr);
+//            } else if (chose == 3) {
+//                System.out.println("Enter the number to check ");
+//                x = input.nextInt();
+//                //  check_contain(arr, x);
+//                System.out.println(arr.contains(x));
+//
+//            } else if (chose == 4) {
+//                Collections.sort(arr);
+//
+//
+//            }
+//        }while (chose !=5 && chose>0);
 
 
         //Q6------------------------------------------------------------------------------------------------------------
@@ -109,10 +109,25 @@ public class Main {
 
 
         //Q7----------------------NOT FINISSHED--------------------------------------------------------------------------------------
-//        Scanner input=new Scanner(System.in);
-//        System.out.println("Enter the Password :");
-//        String pass=input.nextLine();
-//        check_length(pass);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the password ");
+        String pass =input.next();
+        int total_score;
+        int l,u,s;
+        l=  check_length(pass);
+        u=check_UpperLowerCase(pass);
+        s=check_sp_char(pass);
+        total_score=l+u+s;
+        if (total_score>=8){
+            System.out.println("Strong password");
+
+        } else if (total_score>=5) {
+            System.out.println("Moderate  password");
+        } else if (total_score<5) {
+            System.out.println("Weak  password");
+        }
+
+        System.out.println(total_score);
 
 
         //Q8------------------------------------------------------------------------------------------------------------
@@ -166,7 +181,45 @@ public class Main {
 //              System.out.println(rev);
 //          }
 
+    public static int check_sp_char(String x){
+        int count=0;
+        for (int i=0;i<x.length();i++) {
+            if ((!Character.isLetter(x.charAt(i))) || (!Character.isDigit(x.charAt(i))) ||(!Character.isSpaceChar(x.charAt(i)))) {
+                count = 2;
+            } else {
+                count = 0;
+            }
+        }
+        return count;
 
+    }
+    public static int check_length(String x){
+        int y = x.length();
+        int z=0;
+        if (y>0 && y<=5){
+            z=0;
+        } else if ((y==6 )||(y==7)) {
+            z=2;
+        } else if (y>=8) {
+            z=3;
+        }
+        return z;
+
+    }
+
+    public static int check_UpperLowerCase(String x){
+        char c;
+        int count=0;
+        for(int i=0 ;i<x.length();i++) {
+            c = x.charAt(i);
+            if (Character.isUpperCase(c)){
+                count=3;
+            } else if(Character.isLowerCase(c))  {
+                count=0;
+            }
+        }
+        return count;
+    }
 
 
 
